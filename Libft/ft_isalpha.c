@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 10:35:14 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/05/31 11:20:37 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:19:11 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
-//verifica se parametro appartene ad (A-Z) oppure ad (a-z) 
+//check if a variable belong to ASCII (A, ..., Z) or (a, ..., z) 
 int	ft_isalpha(int p)
 {
 	if ((p >= 65 && p <= 90) || (p >= 97 && p <= 122))
@@ -22,7 +18,20 @@ int	ft_isalpha(int p)
 	else
 		return (0);
 }
-// MAIN con test di isalpha e ft_isalpha
+// Main for quick check
+/*
+int	main(void)
+{
+	char	test1 = 'B';
+	ft_isalpha(test1);
+}
+*/
+
+// MAIN for comparative test of isalpha and ft_isalpha
+/*
+#include <stdio.h>
+#include <ctype.h>
+*/
 /*
 int	main(void)
 {

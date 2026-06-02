@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 15:01:46 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/01 08:51:13 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:33:32 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-*/
+//check if a variable belong to ASCII
 int	ft_isascii(int p)
 {
 	if (p >= 0 && p <= 127)
@@ -20,6 +18,17 @@ int	ft_isascii(int p)
 	else
 		return (0);
 }
+// Main for quick check
+/*
+int	main(void)
+{
+	char	test1 = 'B';
+	ft_isalpha(test1);
+}
+*/
+/*
+#include <stdio.h>
+*/
 /*
 int	main(void)
 {

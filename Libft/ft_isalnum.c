@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 11:49:45 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/05/31 14:54:28 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:33:27 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Librerie richiamate da funzioni del main.c
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
-// verifica se parametro appartiene ad (A-Z) oppure ad (a-z) oppure ac (1-9)
+//check if a variable belong to ASCII (A, ..., Z) or (a, ..., z) or (1, ...,9)
 int	ft_isalpha(int p);
 int	ft_isdigit(int p);
 
@@ -26,8 +21,19 @@ int	ft_isalnum(int p)
 	else
 		return (0);
 }
-
-// MAIN per test di isalnum
+// Main for quick check
+/*
+int	main(void)
+{
+	char	test1 = 'B';
+	ft_isalpha(test1);
+}
+*/
+// MAIN for comparative test of isalnum and ft_isalnum
+/*
+#include <stdio.h>
+#include <ctype.h>
+*/
 /*
 int	main(void)
 {

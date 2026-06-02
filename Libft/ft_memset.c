@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 19:25:15 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/05/31 20:13:03 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 18:13:29 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 #include <stdio.h>
 #include <string.h>
 */
+#include <stddef.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
@@ -27,6 +30,13 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+/*
+int	main(void)
+{
+	char	buffer[] = "Hello!!!!";
+	ft_memset(buffer, 'A', 5);
+}
+*/
 /*
 int main(void)
 {

@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 16:16:24 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/01 09:01:33 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:52:16 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <string.h>
-*/
+// #include <stdio.h>
+#include <stddef.h>
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -26,6 +25,16 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 /*
+int	main (void)
+{
+	char str[] = "parola";
+	ft_strlen(str);
+	printf("ft_strlen: %zu\n", ft_strlen(str));
+}
+*/
+/*
+#include <string.h>
+#include <stdio.h>
 int	main(void)
 {
 	char *str1 = "Hello, 42!";

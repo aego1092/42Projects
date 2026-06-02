@@ -3,25 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 10:37:45 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/05/31 11:47:55 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:19:57 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <ctype.h>
-*/
-//verifica se parametro appartene ad (1 -9)
+//check if a variable belong to ASCII (1, ..., 9)
 int	ft_isdigit(int p)
 {
 	if (p >= '0' && p <= '9')
 		return (1);
 	return (0);
 }
-// MAIN con test di isdigit e ft_isdigit
+// Main for quick check
+/*
+int	main(void)
+{
+	char	test1 = '50';
+	ft_isalpha(test1);
+}
+*/
+// MAIN cfor comparative test of isdigit and ft_isdigit
+/*
+#include <stdio.h>
+#include <ctype.h>
+*/
 /*
 int	main(void)
 {

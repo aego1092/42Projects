@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 15:52:22 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/01 08:52:46 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/02 17:37:49 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**/
-#include <stdio.h>
-/**/
+//check if a variable belong to ASCII and is printable (incl SPACE)
 int	ft_isprint(int p)
 {
 	if (p >= 32 && p <= 126)
@@ -20,8 +18,10 @@ int	ft_isprint(int p)
 	else
 		return (0);
 }
-
-/**/
+/*
+#include <stdio.h>
+*/
+/*
 int	main(void)
 {
 	int	i;
@@ -46,4 +46,4 @@ int	main(void)
 	}
 	return (0);
 }
-/**/
+*/
