@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:49:34 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 13:38:21 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/07 11:42:57 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <string.h>
 */
+#include <stddef.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*ptr_dest;

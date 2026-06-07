@@ -6,12 +6,19 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 21:12:06 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 11:34:29 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/07 12:30:33 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+/*
+#include <stdio.h>
+#include <bsd/string.h>
+*/
 
+#include <stddef.h>
+/*
+size_t  strlcat(char *dst, const char *src, size_t size);
+*/
 size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
@@ -34,3 +41,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	return (dst_initial_len + ft_strlen(src));
 }
+
+/*
+int main(void)
+{
+    char src [] = "parola";
+    char dst_ft [30]= "librone"; 
+    char dst_or [30] = "librone"; 
+
+	
+    printf("ft_strlcat: %zu\n", ft_strlcat(dst_ft, src, 13));
+	printf("strlcat:    %zu\n", strlcat(dst_or, src, 13));
+
+	return (0);
+}
+*/
+//printf("Stringa finale (dst_ft):  %s\n", dst); to be inserted before return

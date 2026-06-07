@@ -6,12 +6,15 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:43:59 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 21:35:51 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/07 12:30:30 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+/*
 #include <stdio.h>
+*/
+#include <stddef.h>
+
 
 size_t	ft_strlen(const char *s);
 void	*ft_memmove(void *dest, const void *src, size_t n);
@@ -32,18 +35,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
-/**/
+/*
 int main(void)
 {
-    char src [] = "parola";
-    char dst_ft []= "librone"; 
-    // char *dst_or [] = "librone"; 
+    char *src [] = "parola";
+    char *dst_ft []= "librone"; 
+    char *dst_or [] = "librone"; 
 
-    ft_strlcpy(dst_ft, src, 1);
-    // strlcpy(dst_or, src_str, 1);
+    ft_strlcat(dst_ft, src, 1);
+    strlcat(dst_or, src, 1);
 
     printf("Sorgente:  %s\n", src);
-    printf("ft_memcpy: %s\n", dst_ft);
-    // printf("memcpy:    %s\n", dst_or);
+    printf("ft_strlcpy: %s\n", dst_ft);
+    printf("strlcpy:    %s\n", dst_or);
 }
-/**/
+*/

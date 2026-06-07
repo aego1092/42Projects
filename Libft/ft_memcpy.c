@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:39:56 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 18:29:26 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/07 12:29:31 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <stdio.h>
 #include <string.h>
 */
-#include <stdio.h>
 #include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
