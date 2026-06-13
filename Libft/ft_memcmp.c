@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 20:46:20 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/13 17:00:39 by ddi-nico         ###   ########.fr       */
+/*   Created: 2026/06/13 17:03:05 by ddi-nico          #+#    #+#             */
+/*   Updated: 2026/06/13 17:43:24 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*t;
-	size_t			i;
+	const unsigned char	*t1;
+	const unsigned char	*t2;
+	size_t				i;
 
-	t = (unsigned char *)s;
+	t1 = (const unsigned char *)s1;
+	t2 = (const unsigned char *)s2;
 	i = 0;
-	if (n == 0)
-		return (NULL);
 	while (i < n)
 	{
-		if ((t[i] == (unsigned char)c))
-			return ((void *)&t[i]);
-		else
+		if (t1[i] == t2[i])
 			i++;
+		else
+			return (t1[i] - t2[i]);
 	}
-	return (NULL);
+	return (0);
 }
