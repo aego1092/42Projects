@@ -10,6 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_isascii — test per un carattere appartenente al set ASCII
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_isascii(int c);
+
+DESCRIPTION
+     La funzione ft_isascii() verifica se il carattere 'c' è un carattere 
+     ASCII a 7 bit, compreso nel range tra 0 e 127 inclusi.
+
+RETURN VALUE
+     Ritorna un valore diverso da 0 se 'c' è tra 0 e 127, altrimenti 0.
+*/
 //check if a variable belong to ASCII
 int	ft_isascii(int p)
 {

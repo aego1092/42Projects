@@ -6,15 +6,39 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:43:59 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 12:30:30 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:06:15 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+NAME
+     ft_strlcpy — copia una stringa con dimensione fissa del buffer di arrivo
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     size_t ft_strlcpy(char *dst, const char *src, size_t size);
+
+DESCRIPTION
+     ft_strlcpy() copia fino a 'size - 1' caratteri dalla stringa 'src' a 
+     'dst', terminando esplicitamente con un carattere nullo, a patto che 
+     'size' sia maggiore di 0.
+
+RETURN VALUE
+     Ritorna la lunghezza totale della stringa che ha tentato di creare, ovvero
+     la lunghezza di 'src'. Serve a rilevare un eventuale troncamento.
+
+LIMIT CASES
+     - Se 'size' è 0, la stringa 'dst' non viene toccata e non viene inserito 
+       alcun carattere nullo, ma viene comunque restituito strlen(src).
+*/
+/*
 #include <stdio.h>
 */
 #include <stddef.h>
-
 
 size_t	ft_strlen(const char *s);
 void	*ft_memmove(void *dest, const void *src, size_t n);

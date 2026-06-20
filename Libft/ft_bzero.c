@@ -11,6 +11,28 @@
 /* ************************************************************************** */
 
 /*
+NAME
+     ft_bzero — scrive zeri in una stringa di byte
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     void ft_bzero(void *s, size_t n);
+
+DESCRIPTION
+     La funzione ft_bzero() cancella i dati nei primi 'n' byte della memoria
+     a partire dal punto indicato da 's', scrivendo zeri ('\0') in quell'area.
+
+RETURN VALUE
+     Nessun valore restituito.
+
+LIMIT CASES
+     - Simile a ft_memset: se 's' è NULL e 'n' > 0 -> Segmentation Fault.
+*/
+/*
 #include <stdio.h>
 #include <string.h>
 */

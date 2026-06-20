@@ -6,10 +6,34 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:49:34 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 11:42:57 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 10:02:14 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_memmove — copia un'area di memoria (gestisce le sovrapposizioni)
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     void *ft_memmove(void *dest, const void *src, size_t n);
+
+DESCRIPTION
+     La funzione ft_memmove() copia 'n' byte dall'area 'src' all'area 'dest'.
+     A differenza di ft_memcpy(), permette la sovrapposizione tra le aree: la 
+     copia avviene in modo sicuro (leggendo al contrario se dest > src).
+
+RETURN VALUE
+     Ritorna il puntatore a 'dest'.
+
+LIMIT CASES
+     - Gestisce l'overlap senza corrompere i dati.
+     - Se entrambi i puntatori sono NULL, restituisce NULL.
+*/
 /*
 #include <stdio.h>
 #include <string.h>

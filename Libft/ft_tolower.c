@@ -11,6 +11,26 @@
 /* ************************************************************************** */
 
 /*
+NAME
+     ft_tolower — conversione di lettere in minuscolo
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_tolower(int c);
+
+DESCRIPTION
+
+     ft_tolower() converte una lettera maiuscola nel corrispondente minuscolo.
+
+RETURN VALUE
+     Se l'argomento è una lettera modificabile, viene ritornato il carattere 
+     convertito; altrimenti viene ritornato il carattere 'c' invariato.
+*/
+/*
 #include <ctype.h>
 #include <stdio.h>
 */

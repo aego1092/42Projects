@@ -6,10 +6,29 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 12:44:08 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 14:11:13 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 21:36:38 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_toupperr — conversione di lettere in maiuscolo
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_toupper(int c);
+
+DESCRIPTION
+     ft_toupper() converte una lettera minuscola nel corrispondente maiuscolo.
+
+RETURN VALUE
+     Se l'argomento è una lettera modificabile, viene ritornato il carattere 
+     convertito; altrimenti viene ritornato il carattere 'c' invariato.
+*/
 /*
 #include <ctype.h>
 #include <stdio.h>

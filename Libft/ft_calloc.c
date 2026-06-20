@@ -6,28 +6,53 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 18:13:26 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/14 20:11:58 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:34:04 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_calloc — alloca memoria dinamica inizializzata a zero
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     void *ft_calloc(size_t nmemb, size_t size);
+
+DESCRIPTION
+     La funzione ft_calloc() alloca memoria per un array di 'nmemb'
+     elementi di 'size' byte ciascuno. La memoria viene azzerata.
+
+RETURN VALUE
+     Ritorna il puntatore alla memoria. Ritorna NULL se fallisce
+     o se il prodotto 'nmemb * size' genera un overflow.
+
+LIMIT CASES
+     - Se 'nmemb' o 'size' è 0, ritorna un puntatore valido unico
+       passabile a free(), oppure NULL.
+*/
+
 #include <stddef.h>
-#include <stdint.h>
+#include <stdlib.h>
 
 void	*ft_memset(void *s, int c, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-void *ptr;
+	void	*ptr;
 
-if (nmemb == 0 || size == 0)
-    return (NULL);
-if ((nmemb!= 0) && size > SIZE_MAX / nmemb)
-    return (NULL); 
-ptr = malloc(nmemb * size);
-if (ptr == NULL)
-    return (NULL);
-ptr = ft_memset(ptr, '\0', (nmemb * size));
-return ((void *)ptr);
+	if (nmemb == 0 || size == 0)
+		return (ptr = malloc(nmemb * size));
+	if ((nmemb != 0) && size > ((size_t) - 1) / nmemb)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ptr = ft_memset(ptr, '\0', (nmemb * size));
+	return ((void *)ptr);
 }
 /*
 int main(void)
@@ -36,12 +61,13 @@ int main(void)
     size_t  n_elementi = 5;
     size_t  i;
 
-    printf("Richiedo memoria per %zu interi usando ft_calloc...\n", n_elementi);
+    printf("Richiedo memoria per %zu interi usando ft_calloc..\n", n_elementi);
 
     // Allocazione di un array di 5 interi
     array = (int *)ft_calloc(n_elementi, sizeof(int));
 
-    // 1. Controllo di sicurezza: verifichiamo se l'allocazione è andata a buon fine
+    // 1. Controllo di sicurezza: verifichiamo se l'allocazione è andata 
+    // a buon fine
     if (array == NULL)
     {
         printf("Errore: ft_calloc ha restituito NULL!\n");

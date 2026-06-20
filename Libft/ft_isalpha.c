@@ -9,6 +9,27 @@
 /*   Updated: 2026/06/02 17:19:11 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*NAME
+     ft_isalpha — test per un carattere alfabetico
+
+	 SYNOPSIS
+     #include "libft.h"
+
+     int ft_isalpha(int c);
+
+DESCRIPTION
+     La funzione ft_isalpha() verifica se il carattere passato è un carattere 
+     alfabetico, sia maiuscolo che minuscolo.
+
+RETURN VALUE
+     Ritorna un qualsiasi valore diverso da 0 (es. 1)) se il carattere è 
+     alfabetico, altrimenti ritorna 0.
+
+LIMIT CASES
+     - Se il valore di 'c' non è rappresentabile come "unsigned char" o non è 
+       uguale a EOF, il comportamento è indefinito.
+     - Gestisce correttamente i valori ASCII da 0 a 127.
+*/
 
 //check if a variable belong to ASCII (A, ..., Z) or (a, ..., z) 
 int	ft_isalpha(int p)

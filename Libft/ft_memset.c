@@ -11,6 +11,29 @@
 /* ************************************************************************** */
 
 /*
+NAME
+     ft_memset — riempie la memoria con un byte costante
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     void *ft_memset(void *s, int c, size_t n);
+
+DESCRIPTION
+     La funzione ft_memset() riempie i primi 'n' byte dell'area di memoria 
+     puntata da 's' con il byte costante 'c' (convertito in unsigned char).
+
+RETURN VALUE
+     Ritorna un puntatore all'area di memoria 's'.
+
+LIMIT CASES
+     - Se 's' è NULL e 'n' è maggiore di 0, si verifica un Segmentation Fault.
+     - Se 'n' è uguale a 0, la funzione non esegue alcuna operazione.
+*/
+/*
 #include <stdio.h>
 #include <string.h>
 */

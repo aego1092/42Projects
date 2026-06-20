@@ -6,10 +6,35 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 21:12:06 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 12:30:33 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:35:51 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_strlcat — concatena stringhe con limite di dimensione
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     size_t ft_strlcat(char *dst, const char *src, size_t size);
+
+DESCRIPTION
+     La funzione ft_strlcat() concatena 'src' alla fine di 'dst'
+     fino a un massimo di (size - strlen(dst) - 1) caratteri.
+     Garantisce sempre la terminazione con '\0'.
+
+RETURN VALUE
+     Ritorna la lunghezza iniziale di 'dst' più quella di 'src'.
+     Se non trova '\0' in 'size' byte, ritorna (size + src_len).
+
+LIMIT CASES
+     - Se 'size' <= dst_len, non modifica dst e ritorna la somma
+       di 'size' e della lunghezza di 'src'.
+*/
 /*
 #include <stdio.h>
 #include <bsd/string.h>

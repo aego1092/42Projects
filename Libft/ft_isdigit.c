@@ -6,9 +6,33 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 10:37:45 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 17:19:57 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 19:05:15 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+NAME
+     ft_isdigit — verifica se un carattere è una cifra decimale
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_isdigit(int c);
+
+DESCRIPTION
+     La funzione ft_isdigit() controlla se il carattere 'c' è
+     una cifra numerica compresa tra '0' e '9'.
+
+RETURN VALUE
+     Ritorna un valore diverso da 0 se vero, altrimenti 0.
+
+LIMIT CASES
+     - Il comportamento è definito solo se 'c' è un unsigned char
+       valido o uguale a EOF.
+*/
 
 //check if a variable belong to ASCII (1, ..., 9)
 int	ft_isdigit(int p)

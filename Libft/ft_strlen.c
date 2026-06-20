@@ -10,6 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_strlen — calcola la lunghezza di una stringa
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     size_t ft_strlen(const char *s);
+
+DESCRIPTION
+     La funzione ft_strlen() calcola la lunghezza della stringa 's', 
+     escludendo il carattere terminatore '\0'.
+
+RETURN VALUE
+     Il numero di caratteri che precedono il carattere nullo.
+
+LIMIT CASES
+     - Se 's' è NULL, si genera un Segmentation Fault (mancanza di protezione 
+       nello standard di sistema).
+*/
 // #include <stdio.h>
 #include <stddef.h>
 

@@ -6,9 +6,35 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 12:38:32 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/14 18:11:45 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:34:03 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+NAME
+     ft_atoi — converte una stringa in un intero
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_atoi(const char *nptr);
+
+DESCRIPTION
+     La funzione ft_atoi() converte la parte iniziale della stringa
+     puntata da 'nptr' in un valore intero (int). Salta gli spazi
+     iniziali, gestisce il segno e converte le cifre successive.
+
+RETURN VALUE
+     Ritorna l'intero convertito, o 0 se non trova cifre valide.
+
+LIMIT CASES
+     - Se la stringa è vuota o ha solo spazi, ritorna 0.
+     - Gestisce l'overflow/underflow standard basico.
+     - Se 'nptr' è NULL, causa Segmentation Fault.
+*/
 /*
 #include <stdio.h>
 #include <stdlib.h>

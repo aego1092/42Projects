@@ -6,9 +6,32 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 15:52:22 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 17:37:49 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 18:34:07 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+NAME
+     ft_isprint — verifica se un carattere è stampabile
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     int ft_isprint(int c);
+
+DESCRIPTION
+     La funzione ft_isprint() controlla se il carattere 'c' è
+     stampabile, incluso lo spazio (valori ASCII da 32 a 126).
+
+RETURN VALUE
+     Ritorna un valore diverso da 0 se vero, altrimenti 0.
+
+LIMIT CASES
+     - I caratteri di controllo (0-31 e 127) ritornano sempre 0.
+*/
 
 //check if a variable belong to ASCII and is printable (incl SPACE)
 int	ft_isprint(int p)

@@ -6,10 +6,35 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:39:56 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 12:29:31 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/20 10:01:35 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+NAME
+     ft_memcpy — copia un'area di memoria
+
+LIBRARY
+     Libreria di Utilità Standard (libft)
+
+SYNOPSIS
+     #include "libft.h"
+
+     void *ft_memcpy(void *dest, const void *src, size_t n);
+
+DESCRIPTION
+     La funzione ft_memcpy() copia 'n' byte dall'area di memoria 'src' 
+     all'area di memoria 'dest'. Le due aree NON devono sovrapporsi.
+
+RETURN VALUE
+     Ritorna il puntatore originale a 'dest'.
+
+LIMIT CASES
+     - Se 'dest' e 'src' si sovrappongono (overlap), il comportamento è 
+       indefinito (usare ft_memmove in quel caso).
+     - Se sia 'dest' che 'src' sono NULL, la funzione ritorna NULL.
+     - Se solo uno dei due è NULL e 'n' > 0, crasha (Segmentation Fault).
+*/
 // librerie per testare
 /*
 #include <stdio.h>
