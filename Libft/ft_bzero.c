@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 20:15:42 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 18:20:04 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:55:04 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ LIMIT CASES
 #include <stdio.h>
 #include <string.h>
 */
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

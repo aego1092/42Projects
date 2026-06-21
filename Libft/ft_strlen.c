@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 16:16:24 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/07 12:30:39 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:10:45 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ LIMIT CASES
        nello standard di sistema).
 */
 // #include <stdio.h>
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

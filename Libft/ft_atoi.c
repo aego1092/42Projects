@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 12:38:32 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 18:34:03 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:54:11 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ LIMIT CASES
 #include <stdio.h>
 #include <stdlib.h>
 */
+
+#include "libft.h"
 
 int	ft_atoi_helper(const char *nptr, int x, int y, int z);
 int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x);

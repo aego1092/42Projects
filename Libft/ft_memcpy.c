@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:39:56 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 10:01:35 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:58:05 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ LIMIT CASES
 #include <stdio.h>
 #include <string.h>
 */
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

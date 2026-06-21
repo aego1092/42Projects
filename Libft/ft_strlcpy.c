@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 13:43:59 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/16 12:06:15 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:10:19 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ LIMIT CASES
 /*
 #include <stdio.h>
 */
+/*
 #include <stddef.h>
-
 size_t	ft_strlen(const char *s);
 void	*ft_memmove(void *dest, const void *src, size_t n);
+*/
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

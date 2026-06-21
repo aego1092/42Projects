@@ -6,9 +6,10 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 17:03:05 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/16 14:49:28 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:57:41 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
 NAME
      ft_memcmp — confronta due blocchi di memoria
@@ -33,7 +34,8 @@ LIMIT CASES
      - Il confronto è fatto tra 'unsigned char'.
      - Se 'n' è 0, ritorna 0.
 */
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

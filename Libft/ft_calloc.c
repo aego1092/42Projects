@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 18:13:26 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 18:34:04 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:55:30 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@ LIMIT CASES
      - Se 'nmemb' o 'size' è 0, ritorna un puntatore valido unico
        passabile a free(), oppure NULL.
 */
-
+/*
 #include <stddef.h>
 #include <stdlib.h>
+*/
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n);
 

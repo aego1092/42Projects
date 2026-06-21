@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 18:09:37 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 14:35:47 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:11:41 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,13 @@
 ** VEDI ANCHE
 **      strstr(3), strchr(3), strrchr(3), memchr(3)
 */
-
+/*
 #include <stddef.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+*/
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

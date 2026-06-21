@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 16:56:54 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 14:34:20 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:13:45 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ LIMIT CASES
      - Se tutti i caratteri sono in 'set', alloca e ritorna "".
      - Se 's1' o 'set' sono NULL, causa solitamente un crash.
 */
-
-#include "libft.h"
+/*
 #include <stddef.h>
-
 char	*ft_strchr(const char *s, int c);
+*/
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

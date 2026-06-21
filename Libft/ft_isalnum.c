@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 11:49:45 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/02 17:33:27 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:55:59 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ RETURN VALUE
      Ritorna un valore diverso da 0 se il test ha successo, altrimenti 0.
 */
 //check if a variable belong to ASCII (A, ..., Z) or (a, ..., z) or (1, ...,9)
+/*
 int	ft_isalpha(int p);
 int	ft_isdigit(int p);
+*/
+#include "libft.h"
 
 int	ft_isalnum(int p)
 {

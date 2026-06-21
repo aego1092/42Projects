@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 14:57:29 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 18:49:52 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 09:23:51 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,9 @@ LIMIT CASES
 // #include <stdlib.h>
 // #include <stddef.h>
 // #include <stdio.h>
-
+// size_t	ft_strlen(const char *s);
+// char	*ft_strdup(const char *s);
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-
 
 void	free_mtrx(char **mtrx)
 {
@@ -59,40 +56,48 @@ void	free_mtrx(char **mtrx)
 	}
 	free(mtrx);
 }
+
 /*
-ritorna il numero di parole divise da un separatore 
+F_countword => ritorna il numero di parole divise da un separatore 
+1st IF nel while =>  c_char aumenta se troviamo un non separatore
+2nd IF nel while =>  c_word aumenta se abbiamo trovato caratteri prima
+	del separatore o se il carattere successivo e terminatore 
 */
-int countword(char const *s, char c)
+int	countword(char const *s, char c)
 {
 	int	i;
-	int c_char;
-	int c_word;
+	int	c_char;
+	int	c_word;
 
 	i = 0;
 	c_char = 0;
 	c_word = 0;
 	while (s[i] != '\0')
 	{
-		// c_char aumenta se troviamo un non separatore
 		if (s[i] != c)
 			c_char++;
-		// c_word aumenta se abbiamo trovato caratteri prima
-		//del separatore o se il carattere successivo e terminatore
-		if (c_char > 0 && (s[i] == c || s[i+1] == '\0'))
+		if (c_char > 0 && (s[i] == c || s[i + 1] == '\0'))
 		{
 			c_word++;
 			c_char = 0;
 		}
 		i++;
 	}
-	return(c_word);
+	return (c_word);
 }
-// alloca memoria per le k sottostringhe che conterranno le parole divise da separatore
-void allocate_mtrx(char **mtrx, char const *s, char c)
+
+/*
+F_allocatematrix =>alloca memoria per le k sottostringhe
+che conterranno le parole divise da separatore
+2nd IF nel while =>allochiamo le sottostringhe di x byte date
+da c_char (invece di aumentare c_word come in F_countword) 
+Null terminiamo la matrice
+*/
+void	allocate_mtrx(char **mtrx, char const *s, char c)
 {
 	int	i;
-	int k;
-	int c_char;
+	int	k;
+	int	c_char;
 
 	i = 0;
 	k = 0;
@@ -101,49 +106,70 @@ void allocate_mtrx(char **mtrx, char const *s, char c)
 	{
 		if (s[i] != c)
 			c_char++;
-			// invece di aumentare c_word allochiamo le sottostringhe di x byte date da c_char
-		if (c_char > 0 && (s[i] == c || s[i+1] == '\0'))
+		if (c_char > 0 && (s[i] == c || s[i + 1] == '\0'))
 		{
-			mtrx[k] = (char *) malloc ((c_char + 1)* sizeof(char));
-			if(!mtrx[k])
-			{
-				free_mtrx(mtrx);
-				return;
-			}
+			mtrx[k] = (char *) malloc ((c_char + 1) * sizeof (char));
+			if (!mtrx[k])
+				return (free_mtrx(mtrx));
 			k++;
 			c_char = 0;
 		}
 		i++;
 	}
-	// Null terminiamo la matrice
 	mtrx[k] = NULL;
 }
-// inserisco nelle sottostringhe allocate i caratteri c_char delle k parole
-void insert_mtrx(char **mtrx, char const *s, char c)
+
+/*
+F_insert_mtrx => inserisco nelle sottostringhe allocate 
+i caratteri c_char delle k parole
+1st IF nel while => inserisco il carattere nella riga colonna corretta
+2nd IF nel while => appena trovo separatore con c_char
+	metto il terminator della parola e mi sposto di riga nella matrice
+*/
+void	insert_mtrx(char **mtrx, char const *s, char c)
 {
 	int	i;
-	int j;
-	int c_char;
-	int k;
+	int	j;
+	int	k;
+
+	i = 0;
+	k = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+			mtrx[k][j++] = s[i];
+		if (j > 0 && (s[i] == c || s[i + 1] == '\0'))
+		{
+			mtrx[k][j] = '\0';
+			k++;
+			j = 0;
+		}
+		i++;
+	}
+}
+
+/*
+void	insert_mtrx(char **mtrx, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	c_char;
+	int	k;
 
 	i = 0;
 	k = 0;
 	j = 0;
 	c_char = 0;
-
 	while (s[i] != '\0')
 	{
-		// inserisco il carattere nella riga colonna corretta
 		if (s[i] != c)
 		{
 			mtrx[k][j] = s[i];
 			j++;
 			c_char++;
 		}
-		// appena trovo separatore con c_char
-		// metto il terminator della parola
-		// e mi sposto di riga nella matrice,
-		if (c_char > 0 && (s[i] == c || s[i+1] == '\0'))
+		if (c_char > 0 && (s[i] == c || s[i + 1] == '\0'))
 		{
 			mtrx[k][j] = '\0';
 			k++;
@@ -153,15 +179,18 @@ void insert_mtrx(char **mtrx, char const *s, char c)
 		i++;
 	}
 }
-// ritorna una matrice (ptr di ptr) che contiene in ogni riga le parole divise 
-// dal separatore (senza separatori) e infine un NULL a chiusura matrice
-char **ft_split(const char *s, char c)
+*/
+/*
+ritorna una matrice (ptr di ptr) che contiene in ogni riga le parole divise 
+dal separatore (senza separatori) e infine un NULL a chiusura matrice
+*/
+char	**ft_split(const char *s, char c)
 {
-	int c_word;
-	char **mtrx;
+	char		**mtrx;
+	int			c_word;
 
-	c_word = countword(s,c);
-	mtrx = (char **) malloc (sizeof(char *) * (c_word + 1));
+	c_word = countword(s, c);
+	mtrx = (char **) malloc (sizeof (char *) * (c_word + 1));
 	if (!mtrx)
 		return (NULL);
 	allocate_mtrx(mtrx, s, c);
@@ -169,6 +198,7 @@ char **ft_split(const char *s, char c)
 	return (mtrx);
 }
 
+/*
 int main()
 {
 	char **mtrx = ft_split("abbatuta   tttt abbatutaabbatutaabbatuta", 't');
@@ -182,23 +212,4 @@ int main()
 	free_mtrx(mtrx);
 	// free(mtrx);
 }
-
-// char **ft_split(char const *s, char c)
-// {
-// 	size_t	i;
-// 	size_t	i_p;
-// 	char	*s_dup;
-
-// 	if (!s)
-// 		return (NULL);
-// 	i = 0;
-// 	i_p = 0;
-// 	while(i < ft_strlen(s))
-// 	{
-// 		if((s[i] == c))
-// 			i_p++;
-// 		i++;
-// 	}
-// 	if (i_p == ft_strlen(s))
-// 		return(NULL);
-// }
+*/

@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 20:46:20 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 19:14:34 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 07:56:53 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ LIMIT CASES
      - Se 'n' è 0, ritorna NULL senza leggere la memoria.
      - Se 's' è NULL e 'n' > 0, causa Segmentation Fault.
 */
-
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

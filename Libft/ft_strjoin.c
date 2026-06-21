@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:49:30 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 10:02:58 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:09:03 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@ LIMIT CASES
      - Se 's1' o 's2' sono NULL, il comportamento dipende dalla difesa inserita 
        (si protegge ritornando NULL o trattandoli come stringhe vuote).
 */
+/*
 #include <stddef.h>
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+*/
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

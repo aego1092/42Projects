@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 20:03:54 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 18:35:55 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:11:17 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ LIMIT CASES
      - Se 'n' è uguale a 0, ritorna 0.
      - Se una stringa finisce prima di 'n', il confronto si ferma.
 */
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

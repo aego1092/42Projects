@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 21:12:06 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 18:35:51 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:09:59 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,11 @@ LIMIT CASES
 #include <stdio.h>
 #include <bsd/string.h>
 */
-
-#include <stddef.h>
 /*
-size_t  strlcat(char *dst, const char *src, size_t size);
-*/
+#include <stddef.h>
 size_t	ft_strlen(const char *s);
+*/
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 17:50:28 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/20 10:03:55 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/21 08:11:56 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ LIMIT CASES
 #include <string.h>
 #include <stdio.h>
 */
-#include <stddef.h>
+//#include <stddef.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
