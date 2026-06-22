@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 18:13:26 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 07:55:30 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 08:22:54 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,9 @@ LIMIT CASES
 #include <stdlib.h>
 */
 #include "libft.h"
-
+/*
 void	*ft_memset(void *s, int c, size_t n);
+*/
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

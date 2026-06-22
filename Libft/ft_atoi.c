@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 12:38:32 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 07:54:11 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 08:22:16 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ LIMIT CASES
 
 #include "libft.h"
 
-int	ft_atoi_helper(const char *nptr, int x, int y, int z);
-int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x);
-int	ft_atoi_helper_segni(const char *nptr, int *i, int *y);
-int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z);
+static int	ft_atoi_helper(const char *nptr, int x, int y, int z);
+static int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x);
+static int	ft_atoi_helper_segni(const char *nptr, int *i, int *y);
+static int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z);
 
 int	ft_atoi(const char *nptr)
 {
@@ -70,7 +70,7 @@ int	ft_atoi(const char *nptr)
 	return (0);
 }
 
-int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x)
+static int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x)
 {
 	while (((nptr[*i] == 32) || ((nptr[*i] >= 9) && (nptr[*i] <= 13)))
 		&& nptr[*i])
@@ -81,7 +81,7 @@ int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x)
 	return (0);
 }
 
-int	ft_atoi_helper_segni(const char *nptr, int *i, int *y)
+static int	ft_atoi_helper_segni(const char *nptr, int *i, int *y)
 {
 	if (((nptr[*i] == 43) || (nptr[*i] == 45)) && nptr[*i])
 	{
@@ -91,7 +91,7 @@ int	ft_atoi_helper_segni(const char *nptr, int *i, int *y)
 	return (0);
 }
 
-int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z)
+static int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z)
 {
 	while (((nptr[*i] >= 48) && (nptr[*i] <= 57)) && nptr[*i])
 	{
@@ -101,7 +101,7 @@ int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z)
 	return (0);
 }
 
-int	ft_atoi_helper(const char *nptr, int x, int y, int z)
+static int	ft_atoi_helper(const char *nptr, int x, int y, int z)
 {
 	if (z == 1)
 		return (nptr[x + y + z -1] - 48);

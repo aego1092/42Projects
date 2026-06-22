@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 14:51:01 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 08:14:35 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:48:32 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ size_t	ft_strlen(const char *s);
 */
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-char	*ft_substr_start_after_str_end(char const *s);
-char	*ft_substr_len_over_str_end(char const *s, unsigned int start,
-			unsigned int s_lenght);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+static char	*ft_substr_start_after_str_end(char const *s);
+static char	*ft_substr_len_over_str_end(char const *s, unsigned int start,
+				unsigned int s_lenght);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -63,7 +63,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr_memory);
 }
 
-char	*ft_substr_start_after_str_end(char const *s)
+static char	*ft_substr_start_after_str_end(char const *s)
 {
 	char	*substr_memory;
 
@@ -74,7 +74,7 @@ char	*ft_substr_start_after_str_end(char const *s)
 	return (substr_memory);
 }
 
-char	*ft_substr_len_over_str_end(char const *s, unsigned int start,
+static char	*ft_substr_len_over_str_end(char const *s, unsigned int start,
 	unsigned int s_lenght)
 {
 	char	*substr_memory;

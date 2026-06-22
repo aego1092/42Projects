@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/31 19:25:15 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 08:07:03 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 19:04:39 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*ptr;
 	size_t			i;
 
+	if (s == NULL)
+        return (NULL);
 	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)

@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 11:39:56 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 07:58:05 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:56:32 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ LIMIT CASES
 /*
 #include <stdio.h>
 #include <string.h>
-*/
-//#include <stddef.h>
+//#include <stddef.h>*/
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -49,6 +48,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*ptr_src;
 	size_t				i;
 
+	if (!dest && !src)
+		return (NULL);
 	ptr_dest = (unsigned char *)dest;
 	ptr_src = (const unsigned char *)src;
 	i = 0;
@@ -63,15 +64,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int main(void)
 {
-    char	*src_str = NULL;
-    char	*dest_ft = NULL; 
-    // char	*dest_or = NULL; 
+    char	*src_str = "ciccio";
+    char	*dest_ft = "ciao"; 
+    char	*dest_or = "ciao"; 
 
-    ft_memcpy(dest_ft, src_str, 1);
-    // memcpy(dest_or, src_str, 1);
+    ft_memcpy(dest_ft, src_str, 0);
+    memcpy(dest_or, src_str, 0);
 
     printf("Sorgente:  %s\n", src_str);
     printf("ft_memcpy: %s\n", dest_ft);
-    // printf("memcpy:    %s\n", dest_or);
-}
-*/
+    printf("memcpy:    %s\n", dest_or);
+}*/

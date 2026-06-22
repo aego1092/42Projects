@@ -6,47 +6,67 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 10:14:41 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 13:12:39 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:44:01 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	integer_len(int n);
+static void	ft_putnbr_in_itoa(char *str, int n, int len);
+
 char	*ft_itoa(int n)
 {
-	char	str;
-	char	*ptr_str;
-
-	ptr_str = &str;
-	if (n < 0)
-	{
-		if ((n / 10) <= -10)
-		{
-			
-		}
-	}
-	if (n >= 0)
-	{
-
-	}
-}
-
-void	ft_putnbr_fd(int n, int fd)
-{
-	char	c;
+	char	*str;
+	int		len;
 
 	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = integer_len(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	str[len] = '\0';
+	ft_putnbr_in_itoa(str, n, len);
+	return (str);
+}
+
+static int	integer_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
 	{
-		write(fd, "-2147483648", 11);
+		len = 1;
+		if (n == 0)
+			return (len);
+		n = -n;
+	}
+	while (n != 0)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
+
+static void	ft_putnbr_in_itoa(char *str, int n, int len)
+{
+	if (n == 0)
+	{
+		str[0] = '0';
 		return ;
 	}
 	if (n < 0)
 	{
-		write(fd, "-", 1);
-		n = -1 * n;
+		str[0] = '-';
+		n = -n;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + '0';
-	write(fd, &c, 1);
+	while (n != 0)
+	{
+		len--;
+		str[len] = (n % 10) + '0';
+		n /= 10;
+	}
 }

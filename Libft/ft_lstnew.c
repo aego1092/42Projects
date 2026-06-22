@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 12:31:47 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 22:48:14 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 20:33:30 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ LIMIT CASES
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = malloc(sizeof(t_list) * (1));
 	if (node == NULL)
@@ -51,8 +51,8 @@ t_list *ft_lstnew(void *content)
 	return (node);
 }
 
-#include <stdio.h>
-
+//#include <stdio.h>
+/*
 int main()
 {
 	int *data = malloc(sizeof(t_list));
@@ -81,7 +81,7 @@ int main()
 	printf("\n--- TEST COLLEGAMENTI MANUALE ---\n");
 	return (0);
 }
-
+*/
 /*
 // FUNZIONE DI SUPPORTO: Stampa la lista in modo grafico
 void print_list(t_list *lst)

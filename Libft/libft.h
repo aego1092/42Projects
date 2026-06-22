@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 07:02:51 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 17:29:06 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 12:50:25 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 // void* functions
 void	*ft_memset(void *s, int c, size_t n);
@@ -64,9 +65,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 // char** functions
 char	**ft_split(char const *s, char c);
 // strct s_list functions (LINKED LIST)
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

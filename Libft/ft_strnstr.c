@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 18:09:37 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 08:11:41 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 17:49:18 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (NULL);
 	while ((i + lenght_little <= len) && *(big + i) != '\0')
 	{
-		if ((*(big + i) == *(little + 0))
+		if ((*(big + i) == (*little))
 			&& (ft_strncmp((big + i), little, lenght_little)) == 0)
 		{
 			return ((char *)(big + i));
@@ -90,3 +90,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*#include <stdio.h>
+int main()
+{
+	printf("%s", ft_strnstr(((void*)0), "fake", 3));
+}*/

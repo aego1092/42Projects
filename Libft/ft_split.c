@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 14:57:29 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/21 09:23:51 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/22 08:30:51 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,12 @@ LIMIT CASES
 // char	*ft_strdup(const char *s);
 #include "libft.h"
 
-void	free_mtrx(char **mtrx)
+static void	free_mtrx(char **mtrx);
+static int	countword(char const *s, char c);
+static void	allocate_mtrx(char **mtrx, char const *s, char c);
+static void	insert_mtrx(char **mtrx, char const *s, char c);
+
+static void	free_mtrx(char **mtrx)
 {
 	int	i;
 
@@ -63,7 +68,7 @@ F_countword => ritorna il numero di parole divise da un separatore
 2nd IF nel while =>  c_word aumenta se abbiamo trovato caratteri prima
 	del separatore o se il carattere successivo e terminatore 
 */
-int	countword(char const *s, char c)
+static int	countword(char const *s, char c)
 {
 	int	i;
 	int	c_char;
@@ -93,7 +98,7 @@ che conterranno le parole divise da separatore
 da c_char (invece di aumentare c_word come in F_countword) 
 Null terminiamo la matrice
 */
-void	allocate_mtrx(char **mtrx, char const *s, char c)
+static void	allocate_mtrx(char **mtrx, char const *s, char c)
 {
 	int	i;
 	int	k;
@@ -126,7 +131,7 @@ i caratteri c_char delle k parole
 2nd IF nel while => appena trovo separatore con c_char
 	metto il terminator della parola e mi sposto di riga nella matrice
 */
-void	insert_mtrx(char **mtrx, char const *s, char c)
+static void	insert_mtrx(char **mtrx, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -192,7 +197,7 @@ char	**ft_split(const char *s, char c)
 	c_word = countword(s, c);
 	mtrx = (char **) malloc (sizeof (char *) * (c_word + 1));
 	if (!mtrx)
-		return (NULL);
+		return (malloc(0));
 	allocate_mtrx(mtrx, s, c);
 	insert_mtrx(mtrx, s, c);
 	return (mtrx);
