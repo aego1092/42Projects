@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 12:38:32 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/06/22 08:22:16 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:55:10 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,73 +40,30 @@ LIMIT CASES
 #include <stdlib.h>
 */
 
-#include "libft.h"
-
-static int	ft_atoi_helper(const char *nptr, int x, int y, int z);
-static int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x);
-static int	ft_atoi_helper_segni(const char *nptr, int *i, int *y);
-static int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z);
-
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	x;
-	int	y;
-	int	z;
+	int	sign;
+	int	res;
 
+	res = 0;
+	sign = 1;
 	i = 0;
-	x = 0;
-	y = 0;
-	z = 0;
-	ft_atoi_helper_spazi(nptr, &i, &x);
-	ft_atoi_helper_segni(nptr, &i, &y);
-	ft_atoi_helper_numeri(nptr, &i, &z);
-	if (z >= 1)
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\r'
+		|| str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (y == 1 && nptr[x + y - 1] == 45)
-			return (-1 * ft_atoi_helper(nptr, x, y, z));
-		return (ft_atoi_helper(nptr, x, y, z));
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (0);
-}
-
-static int	ft_atoi_helper_spazi(const char *nptr, int *i, int *x)
-{
-	while (((nptr[*i] == 32) || ((nptr[*i] >= 9) && (nptr[*i] <= 13)))
-		&& nptr[*i])
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		(*x)++;
-		(*i)++;
+		res = res * 10 + (str[i] - '0');
+		i++;
 	}
-	return (0);
-}
-
-static int	ft_atoi_helper_segni(const char *nptr, int *i, int *y)
-{
-	if (((nptr[*i] == 43) || (nptr[*i] == 45)) && nptr[*i])
-	{
-		(*y)++;
-		(*i)++;
-	}
-	return (0);
-}
-
-static int	ft_atoi_helper_numeri(const char *nptr, int *i, int *z)
-{
-	while (((nptr[*i] >= 48) && (nptr[*i] <= 57)) && nptr[*i])
-	{
-		(*z)++;
-		(*i)++;
-	}
-	return (0);
-}
-
-static int	ft_atoi_helper(const char *nptr, int x, int y, int z)
-{
-	if (z == 1)
-		return (nptr[x + y + z -1] - 48);
-	return ((nptr[x + y + z -1] - 48)
-		+ 10 * ft_atoi_helper(nptr, x, y, (z - 1)));
+	return (res * sign);
 }
 /*
 int main(void)
