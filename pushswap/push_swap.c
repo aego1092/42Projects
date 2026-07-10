@@ -237,15 +237,42 @@ void sb(t_data *d)
 		write(1, "sb\n", 3);
 }
 
+
+// void ss(t_data *d)
+// {
+// 	int did_a;
+// 	int did_b;
+
+// 	did_a = swap_top_two(d->a, d->size_a);
+// 	did_b = swap_top_two(d->b, d->size_b);
+// 	if (did_a || did_b)
+// 		write(1, "ss\n", 3);
+// }
+
 void ss(t_data *d)
 {
-	int did_a;
-	int did_b;
+    int did_a;
+    int did_b;
 
-	did_a = swap_top_two(d->a, d->size_a);
-	did_b = swap_top_two(d->b, d->size_b);
-	if (did_a || did_b)
-		write(1, "ss\n", 3);
+    // Esegue lo swap su entrambe le pile e salva i risultati
+    did_a = swap_top_two(d->a, d->size_a);
+    did_b = swap_top_two(d->b, d->size_b);
+    
+    // Entra nell'if SOLO se ENTRAMBI gli swap sono andati a buon fine
+    if (did_a && did_b)
+    {
+        write(1, "ss\n", 3);
+    }
+    else
+    {
+        // SE SEI QUI, significa che uno dei due (o entrambi) ha fallito.
+        // Dobbiamo rimediare stampando la mossa singola di chi si è mosso davvero,
+        // altrimenti avremmo una mossa "fantasma" in memoria senza stampa!
+        if (did_a)
+            write(1, "sa\n", 3);
+        if (did_b)
+            write(1, "sb\n", 3);
+    }
 }
 
 //CONTROLLA DI NON COPIARE DATI VUOTI IN A, AGGIUNGE ALL INIZIO DI A
