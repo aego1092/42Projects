@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*   ft_print_dispatcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 11:16:49 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/07/26 16:37:13 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/07/26 16:49:34 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf.h>
 
-int	ft_print_nbr(va_list *args)
+int	ft_print_dispatcher(const char *stampa, size_t *i, va_list *args)
 {
-	int		n;
-	int		count;
-	long	nbr;
+	static const t_ptr_funct	conversion_list[256] = {
+	['c'] = ft_print_char,
+	['s'] = ft_print_str,
+	['d'] = ft_print_nbr,
+	['i'] = ft_print_nbr,
+	['u'] = ft_print_unsigned,
+	['x'] = ft_print_hex_low,
+	['X'] = ft_print_hex_up,
+	['p'] = ft_print_ptr,
+	['%'] = ft_print_percent
+	};
 
-	n = va_arg(*args, int);
-	nbr = n;
-	count = 0;
-	if (nbr < 0)
+	if (conversion_list[(unsigned char)stampa[(*i)]] != NULL)
 	{
-		if (write(1, "-", 1) == -1)
-			return (-1);
-		count++;
-		nbr = -nbr;
+		return (conversion_list[(unsigned char)stampa[(*i)]](args));
 	}
-	return (count + ft_putnbr_base((unsigned long)nbr, "0123456789"));
+	return (0);
 }

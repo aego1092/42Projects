@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddi-nico <ddi-nico@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/25 11:17:26 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/07/25 11:17:31 by ddi-nico         ###   ########.fr       */
+/*   Created: 2026/07/25 11:16:49 by ddi-nico          #+#    #+#             */
+/*   Updated: 2026/07/26 17:40:02 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
+int	ft_print_percent(va_list *args)
+{
+	(void)args;
+	return (write(1, "%", 1));
+}

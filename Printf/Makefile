@@ -10,9 +10,11 @@ INCDIR		= includes
 
 SRCS		= 	ft_printf.c \
 				$(SRCDIR)/conversions/ft_print_char_str.c \
-				$(SRCDIR)/conversions/ft_print_nbr.c \
+				$(SRCDIR)/conversions/ft_print_dispatcher.c \
 				$(SRCDIR)/conversions/ft_print_hex.c \
-				$(SRCDIR)/utils/ft_parsing.c \
+				$(SRCDIR)/conversions/ft_print_nbr.c \
+				$(SRCDIR)/conversions/ft_print_percent.c \
+				$(SRCDIR)/conversions/ft_print_ptr.c \
 				$(SRCDIR)/utils/ft_utils.c 
 
 OBJS		= $(SRCS:.c=.o)
@@ -22,7 +24,7 @@ INCLUDES    = -I. -I$(LIBFT_DIR) -I$(INCDIR)
 all: $(NAME)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+	make -C $(LIBFT_DIR)
 
 $(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
