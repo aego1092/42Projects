@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/02 12:26:00 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/08/02 19:53:34 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/08/02 20:42:28 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	if (!s)
 		return (0);
-
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -27,19 +26,22 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int	i1;
-	int	i2;
+	int		i1;
+	int		i2;
 	char	*str;
 
 	if (!s1 && !s2)
 		return (NULL);
-	
-	str= (char*)malloc((ft_strlen(s1)+ft_strlen(s2)+1)*sizeof(char));
+	if (s1 == NULL)
+		{
+		str = ft_strdup(s2);
+		return (str);
+		}
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof (char));
 	if (!str)
 		return (NULL);
-	
 	i1 = 0;
 	while (s1 && s1[i1])
 	{
@@ -53,9 +55,11 @@ char *ft_strjoin(char *s1, char *s2)
 		i2++;
 	}
 	str[i1 + i2] = '\0';
-	return(str);
+	return (free(s1), free(s2), str);
 }
 
+//xxx
+/*
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*ptr_dest;
@@ -74,6 +78,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+*/
 
 char	*ft_strchr(const char *s, int c)
 {
