@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/02 12:26:00 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/08/02 20:42:28 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/08/08 18:35:51 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		i2++;
 	}
 	str[i1 + i2] = '\0';
-	return (free(s1), free(s2), str);
+	return (free(s1), str);
 }
 
 //xxx

@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 11:18:18 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/07/26 18:39:20 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/08/01 13:19:51 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ char	*ft_strchr(const char *s, int c);
 
 /* UTILS */
 int		ft_putnbr_base(unsigned long nbr, const char *base);
-
 int		ft_printf(const char *stampa, ...);
+int		ft_print_char_normal(char c);
 #endif

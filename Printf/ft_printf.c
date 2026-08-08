@@ -6,7 +6,7 @@
 /*   By: ddi-nico <ddi-nico@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/25 11:15:51 by ddi-nico          #+#    #+#             */
-/*   Updated: 2026/07/26 18:01:55 by ddi-nico         ###   ########.fr       */
+/*   Updated: 2026/08/01 13:19:14 by ddi-nico         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_print_no_conversion(const char *stampa)
 	return (len);
 }
 
-static int	ft_print_char_normal(char c)
+int	ft_print_char_normal(char c)
 {
 	if (write(1, &c, 1) == -1)
 		return (-1);
