@@ -1,6 +1,0 @@
-Prima riga di prova
-Seconda riga
-xx\nxx
-yy\0yy
-xx'\n'xx
-yy'\0'yy
