@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int     *ft_range(int start, int end)
+int     *ft_rrange(int start, int end)
 {
 	int	*int_ptr;
 	int	n;
@@ -23,7 +23,7 @@ int     *ft_range(int start, int end)
 	i = 0;
 	while (i < n)
 	{
-		int_ptr[i] = start + i*cd;
+		int_ptr[i] = end - i*cd;
 		printf("%d\n", int_ptr[i]);
 		i++;
 	}
@@ -32,9 +32,9 @@ int     *ft_range(int start, int end)
 
 int main()
 {
-	int a = -1;
-	int b = 2;
-	// printf("%p", ft_range(a, b));
+	int a = 0;
+	int b = -3;
+	printf("%p", ft_rrange(a, b));
 	return (0);
 }
 
