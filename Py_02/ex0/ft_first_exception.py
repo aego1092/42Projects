@@ -4,6 +4,8 @@ def input_temperature(temp_str: str) -> int:
     return (int(temp_str))
 
 def test_temperature() -> str:
+    """ data validation layer must filter out bad data before it corrupts your
+    agricultural analytics"""
     print("=== Garden Temperature ===")
 
     try:
@@ -14,10 +16,10 @@ def test_temperature() -> str:
             # \r riporta il cursore all'inizio della riga per sovrascriverla
             print(f"Temperature is now {t}{chr(176)}C")
         else:
-            print(f'Caught input_temperature error: {e}')
+            raise ValueError(f'Caught input_temperature error: {t}')
     
-    except ValueError as e:
-        print(f'Caught input_temperature error: {e}')
+    except TypeError as e:
+        print(f"Caught input_temperature error: invalid literal for int() with base 10: '{t}'")
     
 
 # try:
