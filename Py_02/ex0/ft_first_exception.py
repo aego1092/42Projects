@@ -8,19 +8,24 @@ def test_temperature() -> str:
     agricultural analytics"""
     print("=== Garden Temperature ===")
 
+    # VALID INPUT
+    t_in = input("Input data is ")
+
+    #t_in: str = '25'
     try:
-        t = input("Input data is ")
-        if int(t) > -274 and int(t) < 1.4e32:
-            print(f"\033[A\rInput data is '{t}'")
+        t_out: int = input_temperature(t_in)
+        if int(t_out) > -274 and int(t_out) < 1.4e32:
+            print(f"\033[A\rInput data is '{t_in}'")
             # \033[A sposta il cursore in alto di una riga
             # \r riporta il cursore all'inizio della riga per sovrascriverla
-            print(f"Temperature is now {t}{chr(176)}C")
+            print(f"Temperature is now {t_out}{chr(176)}C")
         else:
-            raise ValueError(f'Caught input_temperature error: {t}')
+            raise ValueError(f'Caught input_temperature error: {t_in}')
     
     except TypeError as e:
-        print(f"Caught input_temperature error: invalid literal for int() with base 10: '{t}'")
-    
+        print(f"Caught input_temperature error: invalid literal for int() with base 10: '{t_in}'")
+
+
 
 # try:
     
