@@ -1,0 +1,74 @@
+#include <unistd.h>
+
+void	ft_putnmb(int n)
+{
+	char	c;
+
+	if (n >= 10)
+		ft_putnmb(n / 10);
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+}
+
+int	atoi(char	*c)
+{
+	int	i;
+	int res;
+	i = 0;
+	res = 0;
+	while (c[i])
+	{
+		if (c[i] >= '0' && c[i] <= '9')
+		res =res *10 + c[i]- '0';
+		i++;
+	}
+	return(res);
+}
+
+int	isprime(int x)
+{
+	int i;
+	int flag;
+
+	flag = 0;
+	i = 2;
+	while (i <= x)
+	{
+		if (x % i == 0 && i != x)
+			flag++;
+		i++;
+	}
+	if (flag > 0)
+		return (0);
+	return(x);
+}
+
+void	add_prime_sum(unsigned int	n)
+{
+	int	sp;
+	int i;
+	
+	sp = 0;
+	i = 2;
+	while ( i <= n)
+	{
+		if (isprime(i) > 0)
+			sp += i;
+		i++;
+	}
+	if (sp != 0)
+	{
+		putnmb(sp);
+	}
+	return ;
+}
+
+int	main(int	argc, char	**argv)
+{
+	if (argc == 2 && (argv[1][0] != '\0'))
+		add_prime_sum(atoi(argv[1]));
+	else
+		write(1, "0", 1);
+	write(1, "\n", 1);
+	return(0);
+}
