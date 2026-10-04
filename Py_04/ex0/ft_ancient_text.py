@@ -19,7 +19,7 @@ def ft_ancient_text() -> None:
                 print(content)
                 print("\n---")
             except Exception as e:
-                print(f"Error reading file '{sys.argv[1]}': {e} ")
+                print(f"Error reading file '{sys.argv[1]}': {e}")
         except OSError as e:
             # OSError
             # FileNotFoundError
@@ -33,7 +33,7 @@ def ft_ancient_text() -> None:
                     file_object.close()
                     print(f"File '{sys.argv[1]}' closed")
                 except Exception as e:
-                    print(f"Error closing file '{sys.argv[1]}': {e} ")
+                    print(f"Error closing file '{sys.argv[1]}': {e}")
 
     else:
 

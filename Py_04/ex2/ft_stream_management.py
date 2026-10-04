@@ -21,13 +21,9 @@ def ft_ancient_text() -> None:
                 print(content)
                 print("\n---")
             except Exception as e:
-                print(f"Error reading file '{sys.argv[1]}': {e}")
+                sys.stdout.write(f"[STDERR] Error reading file '{sys.argv[1]}': {e}\n")
         except OSError as e:
-            # OSError
-            # FileNotFoundError
-            # PermissionError
-            # IsADirectoryError
-            print(f"Error opening file '{sys.argv[1]}': {e}")
+            sys.stdout.write(f"[STDERR] Error opening file '{sys.argv[1]}': {e}\n")
 
         finally:
             if file_object is not None:
@@ -35,7 +31,7 @@ def ft_ancient_text() -> None:
                     file_object.close()
                     print(f"File '{sys.argv[1]}' closed\n")
                 except Exception as e:
-                    print(f"Error closing file '{sys.argv[1]}': {e}")
+                    sys.stdout.write(f"[STDERR] Error closing file '{sys.argv[1]}': {e}\n")
         if success:
             ft_archieve_creation(content)
 
@@ -56,6 +52,10 @@ def ft_archieve_creation(content: str) -> None:
     print("---")
 
     save_filename: str = input("Enter new file name (or empty): ").strip()
+    print("Enter new file name (or empty): ", end="", flush=True)
+    save_filename: str = sys.stdin.readline().strip()
+    
+    save_filename: str = input("Enter new file name (or empty): ").strip()
     if save_filename:
         try:
             file_object = open(save_filename, "w")
@@ -64,19 +64,27 @@ def ft_archieve_creation(content: str) -> None:
                 file_object.write(new_content)
                 print(f"Data saved in file '{save_filename}'.")
             except Exception as e:
-                print(f"Error writing file '{save_filename}': {e}")
+                sys.stdout.write(f"[STDERR] Error writing file '{save_filename}': {e}\n")
         except OSError as e:
-            print(f"Error opening file '{save_filename}': {e}")
+            sys.stdout.write(f"[STDERR] Error opening file '{save_filename}': {e}\n")
 
         finally:
             if file_object is not None:
                 try:
                     file_object.close()
                 except Exception as e:
-                    print(f"Error closing file '{save_filename}': {e}")
+                    sys.stdout.write(f"[STDERR] Error closing file '{save_filename}': {e}\n")
     else:
         print("Not saving data.")
 
 
 if __name__ == "__main__":
     ft_ancient_text()
+
+
+
+# import sys, sys.argv, sys.stdin, sys.stdout, sys.stderr, len(),
+# open(), import typing, typing.IO, io.read(), io.readline(), io.write(),
+# io.flush(), io.close(), print()
+
+# sys.stdin, sys.stdout, sys.stderr,
