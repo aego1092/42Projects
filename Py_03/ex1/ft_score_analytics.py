@@ -30,6 +30,7 @@ def ft_score_analytics() -> None:
             print(f"Invalid parameter: '{invalid_scores[i]}'")
         print("No scores provided. Usage: python3"
               "ft_score_analytics.py <score1> <score2> ...")
+              return
     print(f"Scores processed: [{', '.join(game_scores)}]")
     print(f"Total players: {len(valid_scores)}")
     print(f"Total score: {tot_valid_scores}")
