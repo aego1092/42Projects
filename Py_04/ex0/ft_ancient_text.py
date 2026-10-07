@@ -6,11 +6,11 @@ import typing
 
 def ft_ancient_text() -> None:
     if len(sys.argv) == 1:
-        print(f"Usage {sys.argv[0]} <filename>")
+        print(f"Usage: {sys.argv[0]} <filename>")
     elif len(sys.argv) == 2:
         print("=== Cyber Archives Recovery ===")
         print(f"Accessing file '{sys.argv[1]}'")
-        file_object: typing.Optional[typing.IO[str]] = None
+        file_object: typing.IO[str] | None = None
         try:
             file_object = open(sys.argv[1], "r")
             try:
@@ -31,7 +31,7 @@ def ft_ancient_text() -> None:
             if file_object is not None:
                 try:
                     file_object.close()
-                    print(f"File '{sys.argv[1]}' closed")
+                    print(f"File '{sys.argv[1]}' closed.")
                 except Exception as e:
                     print(f"Error closing file '{sys.argv[1]}': {e}")
 
