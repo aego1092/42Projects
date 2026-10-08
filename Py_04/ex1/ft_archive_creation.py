@@ -6,7 +6,7 @@ import typing
 
 def ft_ancient_text() -> None:
     if len(sys.argv) == 1:
-        print(f"Usage: {sys.argv[0]} <filename>")
+        print(f"Usage: {sys.argv[0]} <file>")
     elif len(sys.argv) == 2:
         print("=== Cyber Archives Recovery & Preservation ===")
         print(f"Accessing file '{sys.argv[1]}'")
@@ -19,7 +19,7 @@ def ft_ancient_text() -> None:
                 success = True
                 print("---\n")
                 print(content)
-                print("\n---")
+                print("---")
             except Exception as e:
                 print(f"Error reading file '{sys.argv[1]}': {e}")
         except OSError as e:
@@ -55,7 +55,10 @@ def ft_archive_creation(content: str) -> None:
     print(new_content)
     print("---")
 
-    save_filename: str = input("Enter new file name (or empty): ").strip()
+    try:
+        save_filename: str = input("Enter new file name (or empty): ").strip()
+    except (EOFError, KeyboardInterrupt):
+        save_filename = ""
     if save_filename:
         print(f"Saving data to '{save_filename}'")
         try:

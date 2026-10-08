@@ -33,29 +33,29 @@ def secure_archive(
 def ft_vault_security() -> None:
     print("=== Cyber Archives Security ===")
     # Case 1
-    print("Using 'secure_archive' to read from a nonexistent file:")
+    print("\nUsing 'secure_archive' to read from a nonexistent file:")
     t = secure_archive("/not/existing/file", "r", "")
     print(t)
     # Case 2
-    print("Using 'secure_archive' to read from an inaccessible file:")
+    print("\nUsing 'secure_archive' to read from an inaccessible file:")
     t = secure_archive("/etc/shadow", "r", "")
     print(t)
     # secure_archive("/etc/master.passwd", "r", "")
     # Case 3
-    print("Using 'secure_archive' to read from a regular file:")
+    print("\nUsing 'secure_archive' to read from a regular file:")
     regular_file_t = secure_archive("ancient_fragment.txt")
     success_extract = regular_file_t[0]
     data = regular_file_t[1]
-    print(regular_file_t[0], regular_file_t[1])
+    print(regular_file_t)
     # Case 4
-    print("Using 'secure_archive' to write previous content to a new file:")
+    print("\nUsing 'secure_archive' to write previous content to a new file:")
     if success_extract:
         print(secure_archive("new_fragment.txt", "w", data))
     else:
         print((False, "Previous read failed"))
-    
-    t = secure_archive("newfile.txt", "w", content)
-    print(t)
+
+    # t = secure_archive("newfile.txt", "w", data)
+    # print(t)
 
 
 if __name__ == "__main__":

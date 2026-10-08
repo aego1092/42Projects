@@ -6,7 +6,7 @@ import typing
 
 def ft_ancient_text() -> None:
     if len(sys.argv) == 1:
-        print(f"Usage: {sys.argv[0]} <filename>")
+        print(f"Usage: {sys.argv[0]} <file>")
     elif len(sys.argv) == 2:
         print("=== Cyber Archives Recovery & Preservation ===")
         print(f"Accessing file '{sys.argv[1]}'")
@@ -19,7 +19,7 @@ def ft_ancient_text() -> None:
                 success = True
                 print("---\n")
                 print(content)
-                print("\n---")
+                print("---")
             except Exception as e:
                 sys.stdout.flush()
                 sys.stderr.write(

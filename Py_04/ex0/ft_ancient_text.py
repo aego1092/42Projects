@@ -6,7 +6,7 @@ import typing
 
 def ft_ancient_text() -> None:
     if len(sys.argv) == 1:
-        print(f"Usage: {sys.argv[0]} <filename>")
+        print(f"Usage: {sys.argv[0]} <file>\n")
     elif len(sys.argv) == 2:
         print("=== Cyber Archives Recovery ===")
         print(f"Accessing file '{sys.argv[1]}'")
@@ -17,15 +17,15 @@ def ft_ancient_text() -> None:
                 content: str = file_object.read()
                 print("---\n")
                 print(content)
-                print("\n---")
+                print("---")
             except Exception as e:
-                print(f"Error reading file '{sys.argv[1]}': {e}")
+                print(f"Error reading file '{sys.argv[1]}': {e}\n")
         except OSError as e:
             # OSError
             # FileNotFoundError
             # PermissionError
             # IsADirectoryError
-            print(f"Error opening file '{sys.argv[1]}': {e}")
+            print(f"Error opening file '{sys.argv[1]}': {e}\n")
 
         finally:
             if file_object is not None:
@@ -33,7 +33,7 @@ def ft_ancient_text() -> None:
                     file_object.close()
                     print(f"File '{sys.argv[1]}' closed.")
                 except Exception as e:
-                    print(f"Error closing file '{sys.argv[1]}': {e}")
+                    print(f"Error closing file '{sys.argv[1]}': {e}\n")
 
     else:
 
