@@ -65,12 +65,14 @@ def ft_archive_creation(content: str) -> None:
 
     if save_filename:
         print(f"Saving data to '{save_filename}'")
+        saved: bool = False
         try:
             file_object = open(save_filename, "w")
             try:
                 sys.stdout.flush()
                 file_object.write(new_content)
-                print(f"Data saved in file '{save_filename}'.")
+                saved = True
+                # print(f"Data saved in file '{save_filename}'.")
             except Exception as e:
                 sys.stdout.flush()
                 sys.stderr.write(
@@ -81,17 +83,22 @@ def ft_archive_creation(content: str) -> None:
             sys.stderr.write(
                 f"[STDERR] Error opening file '{save_filename}': {e}\n"
             )
-            print("Data not saved.")
+            # print("Data not saved.")
 
         finally:
             if file_object is not None:
                 try:
                     file_object.close()
                 except Exception as e:
+                    saved = False
                     sys.stdout.flush()
                     sys.stderr.write(
                         f"[STDERR] Error closing file '{save_filename}': {e}\n"
                     )
+        if saved:
+            print(f"Data saved in file '{save_filename}'.")
+        else:
+            print("Data not saved.")
     else:
         sys.stdout.flush()
         sys.stdout.write("Not saving data.\n")
